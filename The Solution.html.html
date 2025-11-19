@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CDBI - The Solution</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&family=Open+Sans:wght@400;600&display=swap');
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #F8F8F8;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+        }
+        .bg-red-primary { background-color: #D62F3A; }
+        .text-red-primary { color: #D62F3A; }
+        .bg-blue-dark { background-color: #2F3C4E; }
+        .text-blue-dark { color: #2F3C4E; }
+        .border-red-primary { border-color: #D62F3A; }
+        
+        .header-nav {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            padding: 0.5rem 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            border-bottom: 3px solid #D62F3A;
+        }
+        .header-nav a {
+            color: #E0E0E0;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border-radius: 0.25rem;
+            transition: all 0.2s ease-in-out;
+        }
+        .header-nav a:hover,
+        .header-nav .active-link {
+            background-color: #D62F3A;
+            color: #FFFFFF;
+        }
+        .header-logo {
+            height: 40px;
+            width: auto;
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+    <!-- Header & Navigation -->
+    <nav class="header-nav sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex-shrink-0">
+                    <a href="index.html">
+                        <img src="cdbi_logo.png" alt="CDBI Logo" class="header-logo">
+                    </a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="index.html">Home</a>
+                    <a href="index.html#">protocol</a>
+                    <a href="protocol.html">The Challenge</a>
+                    <a href="index.html">The Solution</a>
+                    <a href="how-it-works.html" class="active-link">How-It-Works</a>
+                    <a href="index.html#resources">Resources</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="max-w-4xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
+        <header class="text-center mb-12">
+            <h1 class="text-5xl font-extrabold text-blue-dark mb-4 border-b-4 border-red-primary pb-2 inline-block">
+                How C.D.B.I. Ensures Accuracy
+            </h1>
+            <p class="text-xl text-gray-600 mt-4">
+                C.D.B.I. (Canadian Digital Ballot Initiative) is a revolutionary digital voting system designed for federal elections. It operates exactly like a traditional election in terms of process, but replaces outdated paper methods with a secure, transparent, and verifiable digital architecture.
+            </p>
+        </header>
+
+        <!-- Problem & Solution Section -->
+        <section class="mb-12 p-8 bg-white border border-gray-200 rounded-xl shadow-xl">
+            <h2 class="text-3xl font-bold text-red-primary mb-4">The Challenge: Eliminating Error</h2>
+            <p class="text-lg text-gray-700 leading-relaxed">
+                Traditional voting systems are susceptible to human error—from miscounts and uncounted ballots to the lack of immediate, secure verification that a vote was tallied correctly. These inaccuracies can crucially affect election outcomes, especially when single votes decide a seat in the House of Commons.
+            </p>
+            <p class="text-lg text-gray-700 mt-4 leading-relaxed font-semibold">
+                C.D.B.I solves this by making the entire ballot process digital and linking every vote to an immutable, decentralized blockchain ledger.
+            </p>
+        </section>
+
+        <!-- Digital Identity Section -->
+        <section class="mb-12">
+            <h2 class="text-3xl font-bold text-blue-dark mb-6 border-l-4 border-red-primary pl-4">Architecture: Digital Ballots and Identity</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="p-6 bg-white rounded-xl shadow-lg border border-gray-200">
+                    <h3 class="text-xl font-semibold text-red-primary mb-3">Encrypted Digital Identity</h3>
+                    <p class="text-gray-700">
+                        Every registered SIN (Social Insurance Number) holder generates a single, encrypted digital voting token. This token is securely linked to the voter's identity via the Canada Revenue Agency (CRA) credentials, ensuring one vote per citizen.
+                    </p>
+                </div>
+
+                <div class="p-6 bg-white rounded-xl shadow-lg border border-gray-200">
+                    <h3 class="text-xl font-semibold text-red-primary mb-3">Offline Operation & CRA Data</h3>
+                    <p class="text-gray-700">
+                        Crucially, the system is designed not to be dependent on the public internet during the vote. All necessary voter registration data from the CRA is securely uploaded to the operating system of the ATM Voting Machine (AVM) beforehand, ensuring uninterrupted, protected access during voting hours.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Voting Procedure -->
+        <section class="mb-12">
+            <h2 class="text-3xl font-bold text-blue-dark mb-6 border-l-4 border-red-primary pl-4">The Voting Procedure (ATM Kiosk)</h2>
+            <ol class="space-y-4">
+                <li class="flex items-start bg-white p-4 rounded-lg shadow border-l-8 border-red-primary">
+                    <span class="text-xl font-bold text-red-primary mr-4 w-8 flex-shrink-0">1.</span>
+                    <div>
+                        <p class="font-semibold text-gray-800">Authentication</p>
+                        <p class="text-gray-600">At the ATM Voting Machine (AVM), you are prompted to enter your SIN number and complete a 2-step verification using your standard CRA credentials for high security.</p>
+                    </div>
+                </li>
+                <li class="flex items-start bg-white p-4 rounded-lg shadow border-l-8 border-red-primary">
+                    <span class="text-xl font-bold text-red-primary mr-4 w-8 flex-shrink-0">2.</span>
+                    <div>
+                        <p class="font-semibold text-gray-800">Candidate Selection</p>
+                        <p class="text-gray-600">Once verified, the interface displays the Candidate Voting Screen. This touch-screen interface clearly shows the Party Name and the Leader's Name. The system is also headphone accessible for all voters.</p>
+                    </div>
+                </li>
+                <li class="flex items-start bg-white p-4 rounded-lg shadow border-l-8 border-red-primary">
+                    <span class="text-xl font-bold text-red-primary mr-4 w-8 flex-shrink-0">3.</span>
+                    <div>
+                        <p class="font-semibold text-gray-800">Confirmation</p>
+                        <p class="text-gray-600">The next screen is the Confirmation Interface. It displays your selected vote and requires explicit acceptance. Crucially, once accepted, no further changes to that ballot are possible.</p>
+                    </div>
+                </li>
+                <li class="flex items-start bg-white p-4 rounded-lg shadow border-l-8 border-red-primary">
+                    <span class="text-xl font-bold text-red-primary mr-4 w-8 flex-shrink-0">4.</span>
+                    <div>
+                        <p class="font-semibold text-gray-800">Verification & Exit</p>
+                        <p class="text-gray-600">The final Overview Confirmation page confirms your vote has been received and verified on the blockchain. You are given the option to print a physical receipt of your verified transaction ID before hitting 'Exit'. The AVM resets to the welcome screen for the next voter.</p>
+                    </div>
+                </li>
+            </ol>
+        </section>
+
+        <!-- Security Section -->
+        <section class="p-8 bg-blue-dark text-white rounded-xl shadow-xl">
+            <h2 class="text-3xl font-bold mb-4">Blockchain: Security, Transparency, and Real-Time Results</h2>
+            <ul class="space-y-4 text-lg">
+                <li class="flex items-start">
+                    <svg class="w-6 h-6 mr-3 text-red-primary flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                    <div>
+                        <strong>Immutability:</strong> The entire voting system is run on a decentralized blockchain ledger, making every vote tamper-proof and guaranteeing safety and security.
+                    </div>
+                </li>
+                <li class="flex items-start">
+                    <svg class="w-6 h-6 mr-3 text-red-primary flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                    <div>
+                        <strong>Real-Time Transparency:</strong> Results are displayed on a national dashboard in real-time as votes are cast and validated on the blockchain, eliminating long wait times and ensuring maximum public transparency.
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Back to Home CTA -->
+        <div class="mt-12 text-center">
+            <a href="index.html" class="inline-block bg-red-primary text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-red-600 transition shadow-lg">
+                ← Back to Home
+            </a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-blue-dark text-white py-12 text-center mt-20">
+        <div class="max-w-7xl mx-auto px-4">
+            <h3 class="text-3xl font-bold text-red-primary mb-2">C.D.B.I</h3>
+            <p class="mb-4">Canadian Digital Ballot Initiative</p>
+            <p class="text-sm opacity-70">&copy; 2025 CDBI. Built by citizens who believe democracy should work.</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CDBI - The Integrity Gap</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Roboto:wght@300;400;700&display=swap');
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #F0F5F9;
+            color: #333;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+        .bg-red-primary { background-color: #D62F3A; }
+        .text-red-primary { color: #D62F3A; }
+        .bg-blue-dark { background-color: #2F3C4E; }
+        .text-blue-dark { color: #2F3C4E; }
+        
+        .header-nav {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            padding: 0.5rem 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            border-bottom: 3px solid #D62F3A;
+        }
+        .header-nav a {
+            color: #E0E0E0;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border-radius: 0.25rem;
+            transition: all 0.2s ease-in-out;
+        }
+        .header-nav a:hover,
+        .header-nav .active-link {
+            background-color: #D62F3A;
+            color: #FFFFFF;
+        }
+        .header-logo {
+            height: 40px;
+            width: auto;
+        }
+        
+        .case-study {
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .case-study:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .icon-warning {
+            width: 32px;
+            height: 32px;
+            color: #D62F3A;
+            stroke-width: 2.5;
+        }
+
+        .diagram-container {
+            background-color: #34495e;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: inset 0 0 15px rgba(0,0,0,0.5);
+            margin-top: 30px;
+            color: #ecf0f1;
+            text-align: center;
+        }
+        .diagram-step-item {
+            background: #ecf0f1;
+            color: #2c3e50;
+            padding: 10px 15px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.3);
+            min-width: 150px;
+            text-align: center;
+            position: relative;
+        }
+        .risk-point {
+            position: absolute;
+            top: -15px;
+            right: -15px;
+            background-color: #D62F3A;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 800;
+            box-shadow: 0 0 8px #D62F3A;
+        }
+    </style>
+</head>
+<body class="min-h-screen pt-16">
+    <!-- Header & Navigation -->
+    <nav class="header-nav fixed top-0 w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex-shrink-0">
+                    <a href="index.html">
+                        <img src="cdbi_logo.png" alt="CDBI Logo" class="header-logo">
+                    </a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="index.html">Home</a>
+                    <a href="index.html#problem">The Problem</a>
+                    <a href="protocol.html" class="active-link">The Challenge</a>
+                    <a href="index.html#solution">The Solution</a>
+                    <a href="how-it-works.html">How It Works</a>
+                    <a href="index.html#resources">Resources</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+        <header class="text-center mb-16">
+            <p class="text-sm font-semibold uppercase tracking-wider text-red-primary mb-2">RISK AND VULNERABILITY ANALYSIS</p>
+            <h1 class="text-6xl font-extrabold text-blue-dark leading-tight mb-4">
+                The Integrity Gap: Human Factors in Electoral Insecurity
+            </h1>
+            <p class="text-xl text-gray-700 max-w-4xl mx-auto mt-4">
+                Canada's democratic foundation relies on a manual, paper-based system that is increasingly susceptible to human and logistical failure. This intrinsic vulnerability creates an integrity gap, leading to questionable results and eroding public trust in the electoral process.
+            </p>
+        </header>
+
+        <!-- Systemic Weaknesses -->
+        <section class="mb-20">
+            <h2 class="text-4xl text-center font-bold text-blue-dark mb-10">Systemic Weaknesses in Manual Processing</h2>
+            
+            <div class="grid md:grid-cols-3 gap-10">
+                <div class="p-8 bg-white rounded-xl shadow-2xl border-t-4 border-red-primary case-study">
+                    <svg class="icon-warning mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4.5h13.856c1.54 0 2.502-1.667 1.732-3L13.732 7.5c-.77-1.333-2.694-1.333-3.464 0L3.3 16.5c-.77 1.333.192 3 1.732 3z"/></svg>
+                    <h3 class="text-2xl font-semibold text-blue-dark mb-3">Compromised Tallying</h3>
+                    <p class="text-gray-600 font-light">
+                        Manual tabulation by thousands of temporary staff introduces potential for misinterpretation, fatigue-related errors, and inaccurate aggregation of results at the local level.
+                    </p>
+                </div>
+
+                <div class="p-8 bg-white rounded-xl shadow-2xl border-t-4 border-red-primary case-study">
+                    <svg class="icon-warning mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 10v4h2v-4H3zm16 0v4h2v-4h-2zm-6-3h2v10h-2V7zm-4 0h2v10h-2V7zm-4 0h2v10h-2V7z"/></svg>
+                    <h3 class="text-2xl font-semibold text-blue-dark mb-3">Ballot Chain of Custody</h3>
+                    <p class="text-gray-600 font-light">
+                        The journey of a paper ballot—from poll to central counting—is lengthy and vulnerable to physical loss, misplacement, and improper storage protocols, resulting in discarded votes.
+                    </p>
+                </div>
+
+                <div class="p-8 bg-white rounded-xl shadow-2xl border-t-4 border-red-primary case-study">
+                    <svg class="icon-warning mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+                    <h3 class="text-2xl font-semibold text-blue-dark mb-3">Recount Inefficiency</h3>
+                    <p class="text-gray-600 font-light">
+                        Judicial recounts, necessary due to initial human errors, are resource-intensive and lengthy. More critically, they often produce different results, confirming the unreliability of the initial count.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Canadian Precedents -->
+        <section class="mb-20 bg-blue-dark p-12 rounded-2xl shadow-inner text-white">
+            <h2 class="text-4xl text-center font-bold mb-10">Precedent Analysis: Documented Canadian Election Flaws</h2>
+            <p class="text-lg text-gray-300 text-center max-w-4xl mx-auto mb-12">
+                The current electoral methodology is not theoretical; its flaws are documented in recent Canadian history, demonstrating a persistent and critical risk to democratic integrity.
+            </p>
+
+            <div class="grid md:grid-cols-2 gap-10">
+                <div class="case-study p-8 rounded-xl bg-white text-blue-dark shadow-xl">
+                    <h3 class="text-2xl font-semibold text-red-primary mb-3">Case Study 1: Rejected Special Ballots (2021)</h3>
+                    <p class="text-gray-700 mb-4">
+                        The shift to special (mail-in) ballots during the 2021 General Election highlighted systemic rejection rates due to bureaucratic rigidity.
+                    </p>
+                    <ul class="list-disc list-inside space-y-2 text-sm text-gray-600">
+                        <li><strong>The Issue:</strong> Over 20,000 ballots were rejected for logistical reasons, such as signatures not matching, arriving late, or missing a mandatory witness signature.</li>
+                        <li><strong>The Impact:</strong> These rejections were due entirely to procedural requirements that voters could not correct, resulting in a large, material quantity of legitimate votes being nullified.</li>
+                    </ul>
+                </div>
+
+                <div class="case-study p-8 rounded-xl bg-white text-blue-dark shadow-xl">
+                    <h3 class="text-2xl font-semibold text-red-primary mb-3">Case Study 2: The Etobicoke Centre Recount (2011)</h3>
+                    <p class="text-gray-700 mb-4">
+                        This precedent definitively illustrates how close races are highly vulnerable to human counting errors.
+                    </p>
+                    <ul class="list-disc list-inside space-y-2 text-sm text-gray-600">
+                        <li><strong>The Issue:</strong> The original count resulted in a 26-vote victory margin. The judicial recount—a manual re-tallying—reversed the winner and shifted the margin to 12 votes.</li>
+                        <li><strong>The Impact:</strong> The entire initial count was demonstrated to be unreliable, proving that manual processes fail under pressure, directly affecting who sat in Parliament.</li>
+                    </ul>
+                </div>
+
+                <div class="case-study p-8 rounded-xl bg-white text-blue-dark shadow-xl md:col-span-2">
+                    <h3 class="text-2xl font-semibold text-red-primary mb-3">Case Study 3: Unaccounted Ballots and Logistical Failures</h3>
+                    <p class="text-gray-700 mb-4">
+                        Administrative incidents across multiple elections highlight the fragility of the paper trail.
+                    </p>
+                    <ul class="list-disc list-inside space-y-2 text-sm text-gray-600">
+                        <li><strong>2006 (Federal):</strong> Multiple reports of misplaced or forgotten ballot boxes in various ridings, including one instance where a box was discovered days after the election, showcasing severe custodial breakdown.</li>
+                        <li><strong>Continuous Issue:</strong> Elections Canada consistently reports thousands of ballots spoiled or rejected due to improper marking, a type of human error that an electronic system would prevent by enforcing valid input.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Risk Diagram -->
+            <div class="mt-16">
+                <h3 class="text-2xl font-bold text-red-primary mb-4 text-center">Risk Exposure Diagram</h3>
+                <p class="text-gray-300 max-w-3xl mx-auto mb-8 text-center">This visualization details the five critical vulnerability points (VPs) in the current paper-based system, from voter registration to final tabulation, all resolved by the C.D.B.I. protocol.</p>
+                
+                <div class="diagram-container">
+                    <h4 class="text-2xl font-bold mb-4">Current Paper Ballot Process (High Risk)</h4>
+                    
+                    <div class="flex flex-wrap justify-center items-center gap-4">
+                        <div class="diagram-step-item relative">
+                            Voter Registration
+                            <span class="risk-point">VP 1</span>
+                        </div>
+                        <span class="text-yellow-400 text-3xl">→</span>
+
+                        <div class="diagram-step-item relative">
+                            Ballot Issuance/Marking
+                            <span class="risk-point">VP 2</span>
+                        </div>
+                        <span class="text-yellow-400 text-3xl">→</span>
+                        
+                        <div class="diagram-step-item relative">
+                            Chain of Custody
+                            <span class="risk-point">VP 3</span>
+                        </div>
+                        <span class="text-yellow-400 text-3xl">→</span>
+
+                        <div class="diagram-step-item relative">
+                            Manual Tallying
+                            <span class="risk-point">VP 4</span>
+                        </div>
+                        <span class="text-yellow-400 text-3xl">→</span>
+                        
+                        <div class="diagram-step-item relative">
+                            Result Aggregation
+                            <span class="risk-point">VP 5</span>
+                        </div>
+                    </div>
+
+                    <p class="text-sm mt-6 text-gray-400">Each VP (Vulnerability Point) represents a stage where human error or logistical failure can compromise the integrity and verifiability of the final count.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="mb-12">
+            <div class="bg-red-primary text-white p-10 rounded-2xl shadow-xl text-center">
+                <h4 class="text-3xl font-bold mb-4">The Solution to Unverifiable Results</h4>
+                <p class="mb-6 font-light max-w-3xl mx-auto">
+                    The evidence confirms the urgent need for systemic modernization. Our blockchain-based system eliminates human error, providing cryptographically guaranteed results.
+                </p>
+                <a href="how-it-works.html" class="inline-block bg-white text-red-primary font-bold py-3 px-6 rounded-full shadow-lg hover:bg-gray-100 transition duration-300">
+                    See the Blockchain Solution →
+                </a>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="bg-blue-dark text-white py-12 text-center">
+        <div class="max-w-7xl mx-auto px-4">
+            <h3 class="text-3xl font-bold text-red-primary mb-2">C.D.B.I</h3>
+            <p class="mb-4">Canadian Digital Ballot Initiative</p>
+            <p class="text-sm opacity-70">&copy; 2025 CDBI. Operational Security Standard (OSS) Compliant.</p>
+        </div>
+    </footer>
+</body>
+</html>
